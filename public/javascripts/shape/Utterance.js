@@ -35,7 +35,7 @@ molic.shape.Utterance = draw2d.Connection.extend({
         this.setTargetDecorator(arrow);
 
         this.attr({
-            //router:new draw2d.layout.connection.InteractiveManhattanConnectionRouter(),
+            router:new draw2d.layout.connection.InteractiveManhattanConnectionRouter(),
             outlineStroke:0,
             stroke:2
         });

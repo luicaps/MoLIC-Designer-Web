@@ -17,14 +17,13 @@ molic.shape.Closing = draw2d.shape.basic.Circle.extend({
         this.innerCircle = new draw2d.shape.basic.Circle(20);
         this._super(attr);
         
-        this.northPort = this.createPort("hybrid", new draw2d.layout.locator.TopLocator(this));
+        var northPort = this.createPort("hybrid", new draw2d.layout.locator.TopLocator(this));
+        this.northPort = northPort;
         this.northPort.setConnectionAnchor(new draw2d.layout.anchor.ChopboxConnectionAnchor(this.northPort));
-        /*this.southPort = this.createPort("hybrid", new draw2d.layout.locator.BottomLocator(this));
-        this.southPort.setConnectionAnchor(new draw2d.layout.anchor.ChopboxConnectionAnchor(this.southPort));
-        this.leftPort = this.createPort("hybrid", new draw2d.layout.locator.LeftLocator(this));
-        this.leftPort.setConnectionAnchor(new draw2d.layout.anchor.ChopboxConnectionAnchor(this.leftPort));
-        this.rightPort = this.createPort("hybrid", new draw2d.layout.locator.RightLocator(this));
-        this.rightPort.setConnectionAnchor(new draw2d.layout.anchor.ChopboxConnectionAnchor(this.rightPort));*/
+
+        this.northPort.getConnectionDirection = function(conn, relatedPort){ 
+            return northPort.getParent().getBoundingBox().getDirection(relatedPort.getAbsolutePosition());
+        };
 
         this.setDimension(35, 35);
         this.setBackgroundColor(this.DEFAULT_COLOR);

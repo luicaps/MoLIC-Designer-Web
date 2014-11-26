@@ -18,8 +18,13 @@ molic.shape.Opening = draw2d.shape.basic.Circle.extend({
     init: function(attr, setter, getter ) {
         this._super(attr);
 
-        this.northPort = this.createPort("hybrid", new draw2d.layout.locator.TopLocator(this));
+        var northPort = this.createPort("hybrid", new draw2d.layout.locator.TopLocator(this));
+        this.northPort = northPort;
         this.northPort.setConnectionAnchor(new draw2d.layout.anchor.ChopboxConnectionAnchor(this.northPort));
+
+        this.northPort.getConnectionDirection = function(conn, relatedPort){ 
+            return northPort.getParent().getBoundingBox().getDirection(relatedPort.getAbsolutePosition());
+        };
 
         this.setDimension(35, 35);
         this.setBackgroundColor(this.DEFAULT_COLOR);

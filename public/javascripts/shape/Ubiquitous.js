@@ -14,9 +14,14 @@ molic.shape.Ubiquitous = draw2d.shape.layout.VerticalLayout.extend({
     init: function(attr, setter, getter ) {
         this._super(attr);
 
-        this.northPort = this.createPort("hybrid", new draw2d.layout.locator.TopLocator(this));
+        var northPort = this.createPort("hybrid", new draw2d.layout.locator.TopLocator(this));
+        this.northPort = northPort;
         this.northPort.setConnectionAnchor(new draw2d.layout.anchor.ChopboxConnectionAnchor(this.northPort));
 
+        this.northPort.getConnectionDirection = function(conn, relatedPort){ 
+            return northPort.getParent().getBoundingBox().getDirection(relatedPort.getAbsolutePosition());
+        };
+        
         this.setBackgroundColor("#ecf0f1");
 
         // UI representation
