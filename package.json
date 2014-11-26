@@ -1,0 +1,12 @@
+{
+  "name": "molic",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.3.5",
+	"serve-favicon": "*"
+  }
+}
