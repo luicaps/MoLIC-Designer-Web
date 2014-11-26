@@ -1,9 +1,9 @@
 /**
- * @class example.connection_labeledit.LabelConnection
+ * @class molic.shape.Utterance
  * 
- * A simple Connection with a label wehich sticks in the middle of the connection..
+ * A Connection with a label which sticks in the middle of the connection.
  *
- * @author Andreas Herz
+ * @author luicaps
  * @extend draw2d.Connection
  */
 molic.shape.Utterance = draw2d.Connection.extend({
@@ -43,19 +43,19 @@ molic.shape.Utterance = draw2d.Connection.extend({
  
     /**
      * @method
-     * Set the text to show if the state shape
+     * Set the utterance of the connection
      * 
-     * @param {String} text
+     * @param {String} utterance
      */
-    setUtterance: function (text) {
-        this.utterance.setText(text);
+    setUtterance: function (utterance) {
+        this.utterance.setText(utterance);
         return this;
     },
  
  
     /**
      * @method
-     * Return the label of the shape
+     * Return the utterance of the connection
      * 
      */
     getUtterance: function () {

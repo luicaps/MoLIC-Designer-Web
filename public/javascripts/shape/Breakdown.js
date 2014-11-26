@@ -1,10 +1,10 @@
 /**
- * @class example.connection_labeledit.LabelConnection
+ * @class molic.shape.Breakdown
  * 
- * A simple Connection with a label wehich sticks in the middle of the connection..
+ * This is a simple Connection based on the Utterance connection, simply changing the line of the connection to dashed.
  *
- * @author Andreas Herz
- * @extend draw2d.Connection
+ * @author luicaps
+ * @extend molic.shape.Utterance
  */
 molic.shape.Breakdown = molic.shape.Utterance.extend({
     

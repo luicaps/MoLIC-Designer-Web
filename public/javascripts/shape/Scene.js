@@ -1,6 +1,9 @@
 /**
- * @class draw2d.shape.pert.Activity
+ * @class molic.shape.Scene
  * 
+ * Vertical layout with a top label, a 1px height rectangle representing a line, and a bottom label
+ *
+ * @author luicaps
  * @extends draw2d.shape.layout.VerticalLayout
  */
 molic.shape.Scene = draw2d.shape.layout.VerticalLayout.extend({
@@ -27,20 +30,17 @@ molic.shape.Scene = draw2d.shape.layout.VerticalLayout.extend({
         this.setRadius(3);
 
         // Compose the top row of the shape
-        //
         var top = this.createLabel("Topic").setStroke(0);
         this.topic = top;
 
         // the middle part of the shape
         // This part contains the ports for the connection
-        //
         var center =new draw2d.shape.basic.Rectangle();
         center.getHeight= function(){return 1;};
         center.setMinWidth(90);
         center.setColor("#000000");
 
         // the bottom of the activity shape
-        //
         var bottom = this.createLabel("d+u: ..."); 
         this.dialogue = bottom;
         bottom.setMinHeight(30);
@@ -51,7 +51,6 @@ molic.shape.Scene = draw2d.shape.layout.VerticalLayout.extend({
         this.dialogue.installEditor(new draw2d.ui.LabelInplaceEditor());
 
         // finally compose the shape with top/middle/bottom in VerticalLayout
-        //
         this.add(top, new draw2d.layout.locator.CenterLocator(this));
         this.add(center);
         this.add(bottom);
@@ -59,18 +58,18 @@ molic.shape.Scene = draw2d.shape.layout.VerticalLayout.extend({
  
     /**
      * @method
-     * Set the text to show if the state shape
+     * Set the scene's Topic
      *
-     * @param {String} text
+     * @param {String} topic
      */
-    setTopic: function (text) {
-        this.topic.setText(text);
+    setTopic: function (topic) {
+        this.topic.setText(topic);
         return this;
     },
  
     /**
      * @method
-     * Return the label of the shape
+     * Return the topic of the scene
      */
     getTopic: function () {
         return this.topic.getText();
@@ -78,8 +77,8 @@ molic.shape.Scene = draw2d.shape.layout.VerticalLayout.extend({
  
     /**
      * @method
-     * Set the text to show if the state shape
-     * @param {Object} activityDef the setting for the activity
+     * Set the scene's dialogue
+     * @param {String} dialogue
      */
     setDialogue: function (dialogue) {
         this.dialogue.setText(dialogue);
@@ -89,7 +88,7 @@ molic.shape.Scene = draw2d.shape.layout.VerticalLayout.extend({
  
     /**
      * @method
-     * Return the activity setting of the shape
+     * Return the dialogue of the scene
      */
     getDialogue: function () {
         return this.dialogue.getText();
@@ -113,16 +112,6 @@ molic.shape.Scene = draw2d.shape.layout.VerticalLayout.extend({
         label.setColor(this.bgColor.darker(0.2));
         label.onDoubleClick=function(angle){/* ignore them for the layout elements*/};
         return label;
-    },
- 
-    /**
-     * @method
-     * validate all regular expression from this connection and set a corresponding
-     * color for the connection if any errors are in.
-     * 
-     */
-    validate: function(){
- 
     },
  
     /**

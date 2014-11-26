@@ -1,10 +1,9 @@
-/*****************************************
- * Library is under GPL License (GPL)
- * Copyright (c) 2012 Andreas Herz
- ****************************************/
 /**
- * @class draw2d.shape.state.State
+ * @class molic.shape.Ubiquitous
  * 
+ * Gray rectangle created by a VerticalLayout (could be a Rectangle)
+ *
+ * @author luicaps
  * @extends draw2d.shape.layout.VerticalLayout
  */
 molic.shape.Ubiquitous = draw2d.shape.layout.VerticalLayout.extend({

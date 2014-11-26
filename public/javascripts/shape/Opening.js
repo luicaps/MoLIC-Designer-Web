@@ -1,13 +1,12 @@
-var example = {
-    command: {},
-    shape: {},
-    dialog : {}
-};
+//Forcing the creation of the base class
 var molic = {shape: {}};
 /**
- * @class draw2d.shape.pert.Activity
+ * @class molic.shape.Opening
  * 
- * @extends draw2d.shape.layout.VerticalLayout
+ * Black circle
+ *
+ * @author luicaps
+ * @extends draw2d.shape.basic.Circle
  */
 molic.shape.Opening = draw2d.shape.basic.Circle.extend({
 

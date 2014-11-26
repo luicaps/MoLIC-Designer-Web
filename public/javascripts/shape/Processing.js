@@ -1,7 +1,10 @@
 /**
- * @class draw2d.shape.pert.Activity
+ * @class molic.shape.Processing
  * 
- * @extends draw2d.shape.layout.VerticalLayout
+ * Black rectangle
+ *
+ * @author luicaps
+ * @extends draw2d.shape.basic.Rectangle
  */
 molic.shape.Processing = draw2d.shape.basic.Rectangle.extend({
 

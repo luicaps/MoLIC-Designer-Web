@@ -1,10 +1,9 @@
-/*****************************************
- * Library is under GPL License (GPL)
- * Author: luicaps
- ****************************************/
 /**
- * @class draw2d.shape.state.End
+ * @class molic.shape.Closing
  * 
+ * White circle with a black circle inside.
+ *
+ * @author luicaps
  * @extends draw2d.shape.basic.Circle
  */
 molic.shape.Closing = draw2d.shape.basic.Circle.extend({
